@@ -30,3 +30,17 @@ setInterval(() => {
   
   prev = index;
 }, 3000);
+
+// Add click event listener to each shape
+const shapes = document.querySelectorAll('.shape');
+shapes.forEach(shape => {
+  shape.addEventListener('click', () => {
+    // Toggle animation class
+    shape.classList.toggle('clicked');
+    
+    // Optionally remove the class after animation ends to allow repeated clicks
+    setTimeout(() => {
+      shape.classList.remove('clicked');
+    }, 1000);  // Match the duration of your animation
+  });
+});

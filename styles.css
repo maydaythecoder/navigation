@@ -6,15 +6,15 @@ body {
     background-color: black;
     margin: 0px;
     overflow: hidden;
-  }
-  
-  #wrapper {
+}
+
+#wrapper {
     aspect-ratio: 1.618;
     width: 90vmin;
     position: relative;
-  }
-  
-  #wrapper > .shape {
+}
+
+#wrapper > .shape {
     height: 30%;
     width: 30%;
     background-color: rgba(255 255 255 / 5%);
@@ -22,22 +22,39 @@ body {
     transition: left, top, height, width, border-radius;
     transition-duration: 750ms;
     transition-timing-function: ease-in-out;
-  }
-  
-  #wrapper > .shape:nth-child(1) {
+}
+
+/* Add animation for clicked shapes */
+.shape.clicked {
+    /* transform: scale(1.5) rotate(45deg); Scale up and rotate */
+    animation: ROT8 1.5s ease-in-out;    
+}
+
+@keyframes ROT8 {
+    100%{
+        transform: scale(140.5) rotate(90deg); /* Scale up and rotate */
+        z-index: 100;
+    }
+    30%{
+        border-radius: 0%;
+    }
+}
+
+/* Existing styles for individual shapes */
+#wrapper > .shape:nth-child(1) {
     background-color: rgb(176, 190, 197);
     z-index: 2;
-  }
-  
-  #wrapper > .shape:nth-child(2) {
+}
+
+#wrapper > .shape:nth-child(2) {
     background-color: rgb(245, 245, 245);
     z-index: 2;
-  }
-  
-  #wrapper > .shape:nth-child(3) {
+}
+
+#wrapper > .shape:nth-child(3) {
     background-color: rgb(155, 93, 229);
     z-index: 1;
-  }
+}
   
   #wrapper > .shape:nth-child(4) {
     background-color: rgb(241, 91, 181);
