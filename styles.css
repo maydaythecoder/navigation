@@ -24,23 +24,38 @@ body {
     transition-timing-function: ease-in-out;
 }
 
-/* Add animation for clicked shapes */
 .shape.clicked {
-    /* transform: scale(1.5) rotate(45deg); Scale up and rotate */
     animation: ROT8 1.5s ease-in-out;    
 }
 
 @keyframes ROT8 {
     100%{
-        transform: scale(140.5) rotate(90deg); /* Scale up and rotate */
+        transform: scale(40.5); /* Scale up and rotate */
         z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0%;
+    }
+    50%{
+        transform: scale(10.0); /* Scale up and rotate */
+        z-index: 100;
+        width: 60vw;
+        z-index: 10;
     }
     30%{
-        border-radius: 0%;
+        border-radius: 5%;
+        z-index: 6;
+    }
+    10%{
+        transform: scale(1.1); /* Scale up and rotate */
+        z-index: 2;
+    }
+    1%{
+        transform: scale(o.9);
+        z-index: 1;
     }
 }
 
-/* Existing styles for individual shapes */
 #wrapper > .shape:nth-child(1) {
     background-color: rgb(176, 190, 197);
     z-index: 2;
